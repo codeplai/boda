@@ -1,0 +1,20 @@
+services:
+  malla:
+    build: .
+    image: malla-isoftesan:latest
+    container_name: malla-isoftesan
+    restart: unless-stopped
+    networks:
+      - edge
+    # Publicar 8080 es opcional (solo para probar local). Traefik enruta por la red interna.
+    ports:
+      - "8080:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.malla.rule=Host(`malla.isoftesan.dev`)"
+      - "traefik.http.routers.malla.tls.certresolver=cf"
+      - "traefik.http.services.malla.loadbalancer.server.port=80"
+
+networks:
+  edge:
+    external: true

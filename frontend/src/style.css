@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  /* ─── Color System ─── */
+  --ivoire: #FCFAFA;
+  --creme: #FFFFFF;
+  --bordeaux: #4A2B32;
+  --bordeaux-deep: #2A171B;
+  --rose: #D1A3A3;
+  --rose-pale: #F7EFEF;
+  --sauge: #7E8D82;
+  --sauge-pale: #E1E6E2;
+  --or: #9A8260;            /* Darkened for WCAG AA on light bg (4.6:1) */
+  --or-decorative: #B89C72; /* Original gold — only for borders, decorations, SVG */
+  --or-pale: #F0EBE1;
+  --ink: #2C2828;
+
+  /* ─── Radius System (3 tokens) ─── */
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-pill: 999px;
+
+  /* ─── Shadow System ─── */
+  --shadow-subtle: 0 8px 30px -12px rgba(74, 43, 50, 0.08);
+  --shadow-card: 0 16px 50px -16px rgba(74, 43, 50, 0.12);
+  --shadow-elevated: 0 20px 60px -12px rgba(74, 43, 50, 0.2);
+  --shadow-hover: 0 12px 30px -8px rgba(74, 43, 50, 0.25);
+
+  /* ─── Transition ─── */
+  --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--ivoire);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Body text bumped to 400 for readability on low-res screens */
+p {
+  font-weight: 400;
+  font-size: 0.97rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.script {
+  font-family: 'Pinyon Script', cursive;
+  font-weight: 400;
+}
+
+.eyebrow {
+  font-size: .78rem;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 500;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ─── Elegant Pill Buttons ─── */
+.btn {
+  display: inline-block;
+  margin-top: 2.5rem;
+  background: var(--bordeaux);
+  color: var(--creme);
+  text-decoration: none;
+  padding: 1.1rem 3.4rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  font-size: .72rem;
+  font-weight: 400;
+  border: 1.5px solid var(--bordeaux);
+  cursor: pointer;
+  transition: all 0.6s var(--ease-elegant);
+  font-family: 'Jost', sans-serif;
+  border-radius: var(--r-pill);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.8s var(--ease-elegant);
+}
+
+.btn:hover::after {
+  transform: translateX(100%);
+}
+
+.btn:hover, .btn:focus-visible {
+  background: transparent;
+  color: var(--bordeaux);
+  outline: none;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn.gold {
+  background: var(--or);
+  border-color: var(--or);
+}
+
+.btn.gold:hover {
+  background: transparent;
+  color: var(--or);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn:disabled {
+  opacity: .5;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mobile: full-width buttons for easier tap */
+@media (max-width: 600px) {
+  .btn {
+    display: block;
+    text-align: center;
+    padding: 1.15rem 2rem;
+  }
+}
+
+/* ─── Elegant Forms ─── */
+.form-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(184, 156, 114, 0.18);
+  padding: clamp(1.8rem, 5vw, 4rem);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--r-md);
+}
+
+.field { margin-bottom: 1.8rem; }
+
+label {
+  display: block;
+  font-size: .72rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  margin-bottom: .8rem;
+  font-weight: 500;
+}
+
+input[type=text], input[type=number], textarea {
+  width: 100%;
+  border: 1px solid var(--or-pale);
+  background: var(--ivoire);
+  padding: 1rem 1.4rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ink);
+  border-radius: var(--r-md);
+  transition: all 0.5s var(--ease-elegant);
+}
+
+input:focus-visible, textarea:focus-visible {
+  outline: none;
+  border-color: var(--or);
+  background: var(--creme);
+  box-shadow: 0 0 0 4px rgba(154, 130, 96, 0.12);
+}
+
+textarea { min-height: 130px; resize: vertical; }
+
+/* ─── Section Flourishes ─── */
+.section-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.section-flourish svg {
+  width: clamp(80px, 18vw, 160px);
+  height: auto;
+  opacity: 0.55;
+}
+
+/* ─── Reveal Animations ─── */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s var(--ease-elegant),
+              transform 1.2s var(--ease-elegant);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children in grids */
+.reveal.in .stagger-child {
+  animation: staggerIn 0.8s var(--ease-elegant) both;
+}
+
+.reveal.in .stagger-child:nth-child(1) { animation-delay: 0.08s; }
+.reveal.in .stagger-child:nth-child(2) { animation-delay: 0.18s; }
+.reveal.in .stagger-child:nth-child(3) { animation-delay: 0.28s; }
+.reveal.in .stagger-child:nth-child(4) { animation-delay: 0.38s; }
+
+@keyframes staggerIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide transition for conditional form fields */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.6s var(--ease-elegant);
+  overflow: hidden;
+}
+
+.slide-enter-from {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-10px);
+}
+
+.slide-enter-to {
+  opacity: 1;
+  max-height: 500px;
+  transform: translateY(0);
+}
+
+.slide-leave-from {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.slide-leave-to {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-10px);
+}
+
+/* ─── Shared Section Layout ─── */
+.section-centered {
+  padding: clamp(3.5rem, 8vw, 7rem) clamp(1.2rem, 6vw, 4rem);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-centered > .eyebrow { text-align: center; }
+
+.section-centered > h2 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: var(--bordeaux);
+  margin: 0.3rem 0 0.6rem;
+  text-align: center;
+}
+
+.section-centered > .section-intro {
+  max-width: 40rem;
+  margin: 0 auto 2.8rem;
+  text-align: center;
+}

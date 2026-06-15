@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma &amp; Gerhard — 26 décembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivoire:#FBF6F0; --creme:#FFFDFA;
+    --bordeaux:#722F37; --bordeaux-deep:#511F26;
+    --rose:#DCA8A1; --rose-pale:#F3DEDA;
+    --sauge:#8A9B7C; --sauge-pale:#DCE4D4;
+    --or:#C5A059; --or-pale:#E9D9BC;
+    --ink:#3A282B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;font-weight:300;color:var(--ink);background:var(--ivoire);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500}
+  .script{font-family:'Pinyon Script',cursive;font-weight:400}
+  .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or);font-weight:500}
+  img{max-width:100%;display:block}
+
+  /* ============ NAV ============ */
+  nav{position:sticky;top:0;z-index:100;background:rgba(251,246,240,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--or-pale);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem clamp(1rem,4vw,3rem)}
+  nav .mono{font-family:'Pinyon Script',cursive;color:var(--bordeaux);font-size:1.9rem;line-height:1}
+  nav ul{display:flex;gap:clamp(.9rem,2.2vw,2rem);list-style:none;align-items:center}
+  nav a{color:var(--bordeaux);text-decoration:none;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;padding-bottom:3px;border-bottom:1px solid transparent;transition:border-color .25s}
+  nav a:hover,nav a:focus-visible{border-color:var(--or);outline:none}
+  .lang-switch{display:flex;border:1px solid var(--or-pale);border-radius:99px;overflow:hidden;flex-shrink:0}
+  .lang-switch button{background:none;border:none;padding:.4rem .85rem;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.12em;color:var(--bordeaux);cursor:pointer;transition:all .25s}
+  .lang-switch button.active{background:var(--bordeaux);color:var(--creme)}
+  .edit-pencil{background:none;border:1px solid var(--or-pale);border-radius:50%;width:34px;height:34px;color:var(--bordeaux);cursor:pointer;font-size:1rem;transition:all .25s;flex-shrink:0}
+  .edit-pencil:hover{background:var(--or);color:var(--creme);border-color:var(--or)}
+  #code-pop{display:none;position:fixed;top:64px;right:clamp(1rem,4vw,3rem);z-index:150;background:var(--creme);border:1px solid var(--or-pale);box-shadow:0 20px 50px -25px rgba(81,31,38,.5);padding:1.2rem;flex-direction:column;gap:.7rem;width:min(280px,90vw)}
+  #code-pop input{border:1px solid var(--or-pale);background:var(--ivoire);padding:.7rem .9rem;font-family:'Jost',sans-serif;font-size:.95rem}
+  #code-pop button{background:var(--bordeaux);color:var(--creme);border:none;padding:.7rem;cursor:pointer;letter-spacing:.15em;text-transform:uppercase;font-size:.72rem;font-family:'Jost',sans-serif}
+  #code-msg{font-size:.8rem;color:#7C3127;min-height:1em}
+  .edit-only{display:none !important}
+  body.editing .edit-only.block{display:block !important}
+  body.editing .edit-only.inline{display:inline-block !important}
+  body.editing [contenteditable="true"]{outline:1.5px dashed var(--or);outline-offset:4px;cursor:text;border-radius:2px}
+  body.editing [contenteditable="true"]:focus{outline-style:solid;background:rgba(233,217,188,.25)}
+  #edit-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--bordeaux);color:var(--creme);display:flex;gap:.9rem;align-items:center;justify-content:center;flex-wrap:wrap;padding:.9rem 1rem;font-size:.85rem;box-shadow:0 -10px 30px -15px rgba(81,31,38,.6)}
+  #edit-banner button{background:var(--or);border:1px solid var(--or);color:var(--creme);padding:.6rem 1.2rem;cursor:pointer;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-family:'Jost',sans-serif}
+  #edit-banner button.ghost{background:transparent;border-color:var(--creme)}
+  body.editing{padding-bottom:70px}
+  .post-date{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin-bottom:.3rem}
+  .post-del{background:none;border:1px solid var(--rose);color:#7C3127;padding:.25rem .7rem;font-size:.72rem;cursor:pointer;margin-top:.7rem;font-family:'Jost',sans-serif;letter-spacing:.1em}
+  .frame .ph{position:relative;overflow:hidden}
+  .frame .ph img{width:100%;height:100%;object-fit:cover}
+  body.editing .frame .ph{cursor:pointer;outline:1.5px dashed var(--or);outline-offset:3px}
+  input[type=file]{width:100%;border:1px dashed var(--or-pale);background:var(--ivoire);padding:.8rem;font-family:'Jost',sans-serif;font-size:.9rem;font-weight:300}
+  .custom-img{border:1px solid var(--or-pale);padding:.8rem;background:var(--creme);box-shadow:0 16px 40px -28px rgba(81,31,38,.5);margin:1.6rem 0;max-width:720px}
+  .custom-txt{white-space:pre-line;max-width:44rem}
+  .burger{display:none;background:none;border:none;cursor:pointer;width:42px;height:42px;position:relative}
+  .burger span{position:absolute;left:9px;right:9px;height:2px;background:var(--bordeaux);transition:all .3s}
+  .burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+  .burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+  @media(max-width:860px){
+    .burger{display:block}
+    nav ul{position:fixed;inset:62px 0 auto 0;background:var(--ivoire);border-bottom:1px solid var(--or-pale);flex-direction:column;align-items:center;gap:0;max-height:0;overflow:hidden;transition:max-height .4s ease}
+    nav ul.open{max-height:380px;box-shadow:0 20px 30px -20px rgba(81,31,38,.3)}
+    nav ul li{width:100%;text-align:center}
+    nav ul a{display:block;padding:1rem;border-bottom:1px solid var(--rose-pale)}
+  }
+
+  /* ============ ORNEMENTS ============ */
+  .corner{position:absolute;width:clamp(120px,24vw,300px);height:auto;pointer-events:none;opacity:.95}
+  .corner.tl{top:-12px;left:-12px}
+  .corner.br{bottom:-12px;right:-12px;transform:rotate(180deg)}
+  .divider{display:flex;align-items:center;justify-content:center;gap:.9rem;margin:2rem auto;color:var(--or)}
+  .divider::before,.divider::after{content:"";height:1px;width:min(90px,20vw);background:linear-gradient(90deg,transparent,var(--or))}
+  .divider::after{background:linear-gradient(90deg,var(--or),transparent)}
+
+  /* ============ HERO + CARTE APPLE-STYLE ============ */
+  .hero-zone{position:relative;height:185vh;background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(220,168,161,.22), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 8% -8%, rgba(138,155,124,.13), transparent 70%),
+    var(--ivoire)}
+  .hero-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .invite-card{will-change:transform,opacity;background:var(--creme);border:1px solid var(--or-pale);box-shadow:0 40px 90px -40px rgba(81,31,38,.55);padding:clamp(2.2rem,6vw,4.5rem) clamp(1.6rem,6vw,5rem);text-align:center;position:relative;max-width:min(680px,90vw)}
+  .invite-card::before{content:"";position:absolute;inset:10px;border:1px solid var(--or);pointer-events:none;opacity:.65}
+  .invite-card .pre{font-size:clamp(1.5rem,3.8vw,2.3rem);color:var(--rose)}
+  .invite-card h1{font-size:clamp(2.4rem,7.5vw,5.2rem);line-height:1.05;color:var(--bordeaux)}
+  .invite-card .amp{font-family:'Pinyon Script',cursive;font-size:clamp(1.8rem,4.4vw,3.2rem);color:var(--or);display:block;margin:.08em 0}
+  .invite-card .lede{max-width:32rem;font-size:clamp(.92rem,2.3vw,1.05rem);margin:1.2rem auto 0}
+  .scroll-hint{position:absolute;bottom:4vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--bordeaux);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.75}
+  .scroll-hint svg{animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+  @media (prefers-reduced-motion: reduce){
+    .hero-zone{height:auto;padding:14vh 0}
+    .hero-sticky{position:static;height:auto}
+    .scroll-hint svg{animation:none}
+  }
+
+  .btn{display:inline-block;margin-top:2rem;background:var(--bordeaux);color:var(--creme);text-decoration:none;padding:1rem 2.6rem;letter-spacing:.22em;text-transform:uppercase;font-size:.74rem;border:1px solid var(--bordeaux);cursor:pointer;transition:all .3s;font-family:'Jost',sans-serif}
+  .btn:hover,.btn:focus-visible{background:transparent;color:var(--bordeaux);outline:none}
+  .btn.gold{background:var(--or);border-color:var(--or)}
+  .btn.gold:hover{background:transparent;color:var(--or)}
+  .btn:disabled{opacity:.5;cursor:wait}
+
+  section{padding:clamp(3.5rem,8vw,6rem) clamp(1.2rem,6vw,4rem);max-width:1150px;margin:0 auto;position:relative}
+  section > h2{font-size:clamp(2rem,5vw,3.1rem);color:var(--bordeaux);margin:.3rem 0 .6rem}
+  .section-intro{max-width:40rem;margin-bottom:2.6rem}
+
+  /* ============ GALERIE ============ */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:1.2rem}
+  .frame{background:var(--creme);padding:.9rem .9rem 2.4rem;border:1px solid var(--or-pale);box-shadow:0 16px 40px -28px rgba(81,31,38,.5);transform:rotate(var(--tilt,0deg));transition:transform .35s}
+  .frame:hover{transform:rotate(0) scale(1.02)}
+  .frame:nth-child(odd){--tilt:-1.4deg}
+  .frame:nth-child(even){--tilt:1.2deg}
+  .frame .ph{aspect-ratio:4/5;background:linear-gradient(150deg,var(--rose-pale),var(--or-pale) 55%,var(--sauge-pale));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:var(--bordeaux);text-align:center;padding:1rem}
+  .frame .ph p{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+  .frame figcaption{font-family:'Pinyon Script',cursive;font-size:1.3rem;color:var(--bordeaux);text-align:center;margin-top:.7rem}
+
+  /* ============ PROGRAMME ============ */
+  .programme{background:var(--creme);border:1px solid var(--or-pale);box-shadow:0 24px 60px -36px rgba(81,31,38,.5)}
+  .programme-inner{padding:clamp(2rem,5vw,3.5rem) clamp(1.2rem,5vw,4rem)}
+  .programme-head{text-align:center;padding-bottom:1.4rem}
+  .programme-head .script{font-size:clamp(2.2rem,5vw,3rem);color:var(--rose);display:block;margin-top:.2rem}
+  .acte{display:grid;grid-template-columns:8.5rem 1fr;gap:1.6rem;padding:1.8rem 0;border-bottom:1px dashed var(--or-pale);align-items:baseline}
+  .acte:last-child{border-bottom:none}
+  .acte .label{font-family:'Pinyon Script',cursive;font-size:1.7rem;color:var(--or)}
+  .acte .heure{font-size:.74rem;letter-spacing:.26em;color:var(--bordeaux);font-weight:500;margin-bottom:.2rem}
+  .acte h4{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;margin-bottom:.3rem}
+  .acte p{font-size:.95rem;max-width:36rem}
+  .acte .note{display:inline-block;margin-top:.55rem;background:var(--rose-pale);padding:.3rem .9rem;font-size:.8rem;color:var(--bordeaux-deep);border-radius:99px}
+  @media(max-width:640px){.acte{grid-template-columns:1fr;gap:.3rem;padding:1.4rem 0}}
+
+  /* ============ INFOS ============ */
+  .infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(235px,100%),1fr));gap:1.2rem;margin-top:2.4rem}
+  .info-card{background:var(--creme);border:1px solid var(--or-pale);padding:1.7rem;position:relative}
+  .info-card::before{content:"";position:absolute;top:0;left:1.7rem;right:1.7rem;height:3px;background:linear-gradient(90deg,var(--rose),var(--or),var(--sauge))}
+  .info-card h4{font-size:1.3rem;color:var(--bordeaux);margin-bottom:.45rem}
+  .info-card p{font-size:.92rem}
+
+  /* ============ FORMULAIRES ============ */
+  .form-card{background:var(--creme);border:1px solid var(--or-pale);padding:clamp(1.4rem,4vw,3rem);box-shadow:0 24px 60px -36px rgba(81,31,38,.5)}
+  .field{margin-bottom:1.5rem}
+  label{display:block;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:.5rem;font-weight:500}
+  input[type=text],input[type=number],textarea{width:100%;border:1px solid var(--or-pale);background:var(--ivoire);padding:.85rem 1rem;font-family:'Jost',sans-serif;font-size:1rem;font-weight:300;color:var(--ink);border-radius:2px}
+  input:focus-visible,textarea:focus-visible{outline:2px solid var(--or);outline-offset:1px}
+  textarea{min-height:110px;resize:vertical}
+  .choices{display:flex;gap:.7rem;flex-wrap:wrap}
+  .choice{flex:1;min-width:min(140px,100%)}
+  .choice input{position:absolute;opacity:0}
+  .choice span{display:block;text-align:center;border:1px solid var(--or-pale);padding:.85rem 1rem;cursor:pointer;font-size:.92rem;transition:all .2s;background:var(--ivoire);border-radius:2px}
+  .choice input:checked + span{background:var(--bordeaux);color:var(--creme);border-color:var(--bordeaux)}
+  .choice input:focus-visible + span{outline:2px solid var(--or)}
+  .feedback{margin-top:1.2rem;padding:1rem 1.2rem;font-size:.95rem;display:none;border-radius:2px}
+  .feedback.ok{display:block;background:#EFF5EA;border:1px solid var(--sauge);color:#41522F}
+  .feedback.err{display:block;background:#FBEDEA;border:1px solid var(--rose);color:#7C3127}
+  .privacy{font-size:.8rem;color:#8A6F72;margin-top:1rem}
+
+  /* ============ LIVRE D'OR ============ */
+  .guest-entries{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1rem;margin-top:2.4rem}
+  .entry{background:var(--creme);border:1px solid var(--or-pale);padding:1.5rem 1.6rem;position:relative}
+  .entry::before{content:"❝";position:absolute;top:.4rem;right:1rem;font-size:2.4rem;color:var(--rose-pale);font-family:serif}
+  .entry .who{font-family:'Pinyon Script',cursive;font-size:1.5rem;color:var(--bordeaux);margin-bottom:.2rem}
+  .entry p{font-size:.95rem}
+  .empty-state{font-style:italic;color:#9B7E82;font-family:'Cormorant Garamond',serif;font-size:1.2rem}
+
+  /* ============ ADMIN ============ */
+  details.admin{margin-top:3.2rem;border-top:1px dashed var(--or-pale);padding-top:1.4rem}
+  details summary{cursor:pointer;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:#A1858A}
+  table{width:100%;border-collapse:collapse;margin-top:1.2rem;font-size:.86rem;background:var(--creme)}
+  th,td{border:1px solid var(--or-pale);padding:.55rem .7rem;text-align:left;vertical-align:top}
+  th{background:var(--rose-pale);font-weight:500;letter-spacing:.08em;font-size:.72rem;text-transform:uppercase;color:var(--bordeaux-deep)}
+  .stats{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem}
+  .stat{background:var(--rose-pale);padding:.8rem 1.4rem;text-align:center;border-radius:2px}
+  .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--bordeaux)}
+  .stat span{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
+
+  footer{background:var(--bordeaux);color:var(--rose-pale);text-align:center;padding:4rem 6vw 3rem;margin-top:3rem}
+  footer .script{font-size:clamp(2.4rem,6vw,3.4rem);color:var(--creme)}
+  footer p{font-size:.82rem;letter-spacing:.2em;margin-top:.7rem}
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+    .reveal.in{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<script>
+/* Garde-fou navigation : intercepte tout clic sur lien interne avant le navigateur, même si le script principal échoue */
+document.addEventListener('click', function(e){
+  const a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+  if(!a) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const target = document.querySelector(a.getAttribute('href'));
+  if(target) target.scrollIntoView({behavior:'smooth'});
+  const menu = document.getElementById('menu');
+  if(menu) menu.classList.remove('open');
+  const b = document.querySelector('.burger');
+  if(b){ b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+}, true);
+</script>
+
+<!-- ====== MOTIFS FLORAUX ====== -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="fleur-bouquet">
+      <g fill="#8A9B7C" opacity=".55">
+        <path d="M30 150 Q70 90 140 60" stroke="#8A9B7C" stroke-width="2.4" fill="none"/>
+        <ellipse cx="55" cy="123" rx="11" ry="6" transform="rotate(-38 55 123)"/>
+        <ellipse cx="78" cy="103" rx="11" ry="6" transform="rotate(-34 78 103)"/>
+        <ellipse cx="103" cy="86" rx="11" ry="6" transform="rotate(-28 103 86)"/>
+        <ellipse cx="128" cy="71" rx="11" ry="6" transform="rotate(-22 128 71)"/>
+      </g>
+      <g fill="#A8B89A" opacity=".5">
+        <path d="M20 110 Q80 95 150 110" stroke="#A8B89A" stroke-width="2" fill="none"/>
+        <ellipse cx="52" cy="102" rx="10" ry="5.5" transform="rotate(-10 52 102)"/>
+        <ellipse cx="84" cy="99" rx="10" ry="5.5" transform="rotate(-4 84 99)"/>
+        <ellipse cx="116" cy="100" rx="10" ry="5.5" transform="rotate(5 116 100)"/>
+      </g>
+      <g transform="translate(58 38)">
+        <circle r="30" fill="#722F37" opacity=".92"/>
+        <path d="M0-30 C16-30 30-16 30 0 C30 16 16 30 0 30 C-9 30 -17 26 -22 19 C-8 22 6 14 6 0 C6 -11 -3 -19 -14 -18 C-9 -25 -5 -30 0 -30Z" fill="#8E3E48"/>
+        <circle r="11" fill="#511F26"/>
+        <circle r="4.5" fill="#C5A059" opacity=".85"/>
+      </g>
+      <g transform="translate(118 52)">
+        <circle r="22" fill="#DCA8A1"/>
+        <path d="M0-22 C12-22 22-12 22 0 C22 12 12 22 0 22 C-6 22 -12 19 -16 14 C-5 16 5 10 5 0 C5 -8 -2 -14 -10 -13 C-7 -19 -4 -22 0 -22Z" fill="#E8C0BA"/>
+        <circle r="7.5" fill="#B97F77"/>
+      </g>
+      <g transform="translate(30 80)" fill="#C5A059" opacity=".9">
+        <circle cx="0" cy="-9" r="5.5"/><circle cx="8.5" cy="-2.8" r="5.5"/><circle cx="5.3" cy="7.3" r="5.5"/><circle cx="-5.3" cy="7.3" r="5.5"/><circle cx="-8.5" cy="-2.8" r="5.5"/>
+        <circle r="4" fill="#722F37"/>
+      </g>
+      <g fill="#F3DEDA">
+        <circle cx="150" cy="30" r="4"/><circle cx="162" cy="44" r="3.2"/><circle cx="143" cy="14" r="3.2"/><circle cx="160" cy="18" r="2.6"/><circle cx="172" cy="32" r="2.6"/>
+      </g>
+    </g>
+    <g id="brin-or">
+      <path d="M0 24 Q30 0 60 24" stroke="#C5A059" stroke-width="1.4" fill="none"/>
+      <circle cx="0" cy="24" r="2.2" fill="#C5A059"/><circle cx="30" cy="6.8" r="2.2" fill="#C5A059"/><circle cx="60" cy="24" r="2.2" fill="#C5A059"/>
+    </g>
+  </defs>
+</svg>
+
+<nav>
+  <div class="mono">E&amp;G</div>
+  <div style="display:flex;align-items:center;gap:.8rem">
+    <div class="lang-switch" role="group" aria-label="Langue / Idioma">
+      <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+    <button class="edit-pencil" onclick="toggleCodePop()" aria-label="Espace des mariés — mode édition" title="Espace des mariés">✎</button>
+    <button class="burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+  </div>
+  <ul id="menu">
+    <li><a href="#histoire" data-i18n="nav_histoire"></a></li>
+    <li><a href="#programme" data-i18n="nav_programme"></a></li>
+    <li><a href="#opera" data-i18n="nav_opera"></a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#annonces" data-i18n="nav_annonces"></a></li>
+    <li><a href="#livredor" data-i18n="nav_livredor"></a></li>
+  </ul>
+</nav>
+
+<div id="code-pop">
+  <label for="code-input" data-i18n="edit_prompt" style="margin-bottom:0"></label>
+  <input type="password" id="code-input" autocomplete="off">
+  <button onclick="checkCode()" data-i18n="edit_enter"></button>
+  <span id="code-msg"></span>
+</div>
+
+<!-- ====== HERO : carte d'invitation effet Apple ====== -->
+<div class="hero-zone" id="hero-zone">
+  <div class="hero-sticky">
+    <svg class="corner tl" viewBox="0 0 190 170" aria-hidden="true"><use href="#fleur-bouquet"/></svg>
+    <svg class="corner br" viewBox="0 0 190 170" aria-hidden="true"><use href="#fleur-bouquet"/></svg>
+    <div class="invite-card" id="invite-card">
+      <p class="pre script" data-i18n="hero_pre"></p>
+      <h1>Emma <span class="amp">&amp;</span> Gerhard</h1>
+      <div class="divider"><svg width="60" height="30" viewBox="0 0 60 30"><use href="#brin-or"/></svg></div>
+      <p class="eyebrow" data-i18n="hero_date"></p>
+      <p class="lede" data-i18n="hero_lede"></p>
+      <a class="btn" href="#rsvp" data-i18n="hero_btn"></a>
+    </div>
+    <div class="scroll-hint">
+      <span data-i18n="scroll_hint"></span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+</div>
+
+<section id="histoire" class="reveal">
+  <p class="eyebrow" data-i18n="hist_eyebrow"></p>
+  <h2 data-i18n="hist_h2"></h2>
+  <p class="section-intro" data-i18n="hist_intro"></p>
+  <p class="edit-only block" style="font-size:.85rem;color:var(--bordeaux);margin:-1.6rem 0 2rem" data-i18n="hist_hint"></p>
+  <div class="gallery" id="gallery">
+    <figure class="frame">
+      <div class="ph" id="photo-1" onclick="slotClick('photo-1')">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg>
+        <p data-i18n="photo_placeholder"></p>
+      </div>
+      <figcaption data-i18n="photo_cap1"></figcaption>
+    </figure>
+    <figure class="frame">
+      <div class="ph" id="photo-2" onclick="slotClick('photo-2')">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg>
+        <p data-i18n="photo_placeholder"></p>
+      </div>
+      <figcaption data-i18n="photo_cap2"></figcaption>
+    </figure>
+    <figure class="frame">
+      <div class="ph" id="photo-3" onclick="slotClick('photo-3')">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg>
+        <p data-i18n="photo_placeholder"></p>
+      </div>
+      <figcaption data-i18n="photo_cap3"></figcaption>
+    </figure>
+  </div>
+
+  <div class="form-card edit-only block" style="margin-top:2.2rem">
+    <div class="field">
+      <label for="gp-cap" data-i18n="gal_cap"></label>
+      <input type="text" id="gp-cap">
+    </div>
+    <div class="field">
+      <label for="gp-file" data-i18n="gal_file"></label>
+      <input type="file" id="gp-file" accept="image/*">
+    </div>
+    <button class="btn gold" onclick="addGalleryPhoto()" data-i18n="gal_btn"></button>
+    <div class="feedback" id="photo-feedback" role="status"></div>
+  </div>
+  <input type="file" id="slot-file" accept="image/*" style="display:none" onchange="slotFileChosen(event)">
+</section>
+
+<section id="programme" class="reveal">
+  <svg class="corner tl" viewBox="0 0 190 170" aria-hidden="true" style="opacity:.45"><use href="#fleur-bouquet"/></svg>
+  <p class="eyebrow" data-i18n="prog_eyebrow"></p>
+  <h2 data-i18n="prog_h2"></h2>
+  <p class="section-intro" data-i18n="prog_intro"></p>
+
+  <div class="programme">
+    <div class="programme-inner">
+      <div class="programme-head">
+        <p class="eyebrow" data-i18n="prog_date"></p>
+        <span class="script">Emma &amp; Gerhard</span>
+        <div class="divider"><svg width="60" height="30" viewBox="0 0 60 30"><use href="#brin-or"/></svg></div>
+      </div>
+
+      <div class="acte">
+        <div class="label" data-i18n="acte0_label"></div>
+        <div>
+          <p class="heure" data-i18n="acte0_heure"></p>
+          <h4 data-i18n="acte0_titre"></h4>
+          <p data-i18n="acte0_txt"></p>
+        </div>
+      </div>
+
+      <div class="acte">
+        <div class="label" data-i18n="acte1_label"></div>
+        <div>
+          <p class="heure">15H30</p>
+          <h4 data-i18n="acte1_titre"></h4>
+          <p data-i18n="acte1_txt"></p>
+          <span class="note" data-i18n="acte1_note"></span>
+        </div>
+      </div>
+
+      <div class="acte">
+        <div class="label" data-i18n="acte2_label"></div>
+        <div>
+          <p class="heure" data-i18n="acte2_heure"></p>
+          <h4 data-i18n="acte2_titre"></h4>
+          <p data-i18n="acte2_txt"></p>
+        </div>
+      </div>
+
+      <div class="acte">
+        <div class="label" data-i18n="acte3_label"></div>
+        <div>
+          <p class="heure" data-i18n="acte3_heure"></p>
+          <h4 data-i18n="acte3_titre"></h4>
+          <p data-i18n="acte3_txt"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="opera" class="reveal">
+  <p class="eyebrow" data-i18n="op_eyebrow"></p>
+  <h2 data-i18n="op_h2"></h2>
+  <p class="section-intro" data-i18n="op_intro"></p>
+
+  <div class="infos">
+    <div class="info-card">
+      <h4 data-i18n="op_c1_t"></h4>
+      <p data-i18n="op_c1_p"></p>
+    </div>
+    <div class="info-card">
+      <h4 data-i18n="op_c2_t"></h4>
+      <p data-i18n="op_c2_p"></p>
+    </div>
+    <div class="info-card">
+      <h4 data-i18n="op_c3_t"></h4>
+      <p data-i18n="op_c3_p"></p>
+    </div>
+    <div class="info-card">
+      <h4 data-i18n="op_c4_t"></h4>
+      <p data-i18n="op_c4_p"></p>
+    </div>
+  </div>
+</section>
+
+<div id="custom-sections"></div>
+
+<section class="edit-only block" style="padding-top:0">
+  <div class="form-card">
+    <h3 style="font-size:1.6rem;color:var(--bordeaux);margin-bottom:1.4rem" data-i18n="sec_add_summary"></h3>
+    <div class="field">
+      <label for="s-title" data-i18n="sec_title"></label>
+      <input type="text" id="s-title">
+    </div>
+    <div class="field">
+      <label for="s-txt" data-i18n="sec_txt"></label>
+      <textarea id="s-txt"></textarea>
+    </div>
+    <div class="field">
+      <label for="s-file" data-i18n="sec_img"></label>
+      <input type="file" id="s-file" accept="image/*">
+    </div>
+    <button class="btn gold" id="sec-btn" onclick="createSection()" data-i18n="sec_btn"></button>
+    <div class="feedback" id="sec-feedback" role="status"></div>
+  </div>
+</section>
+
+<section id="rsvp" class="reveal">
+  <svg class="corner br" viewBox="0 0 190 170" aria-hidden="true" style="opacity:.4"><use href="#fleur-bouquet"/></svg>
+  <p class="eyebrow" data-i18n="rsvp_eyebrow"></p>
+  <h2 data-i18n="rsvp_h2"></h2>
+  <p class="section-intro" data-i18n="rsvp_intro"></p>
+
+  <div class="form-card">
+    <div class="field">
+      <label for="r-nom" data-i18n="f_nom"></label>
+      <input type="text" id="r-nom" data-i18n-ph="f_nom_ph" autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label data-i18n="f_presence"></label>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="presence" value="oui"><span data-i18n="f_oui"></span></label>
+        <label class="choice"><input type="radio" name="presence" value="non"><span data-i18n="f_non"></span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="r-nb" data-i18n="f_nb"></label>
+      <input type="number" id="r-nb" min="1" max="10" value="1">
+    </div>
+
+    <div class="field">
+      <label data-i18n="f_tab"></label>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="tablette" value="oui"><span data-i18n="f_tab_oui"></span></label>
+        <label class="choice"><input type="radio" name="tablette" value="non"><span data-i18n="f_tab_non"></span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="r-regime" data-i18n="f_regime"></label>
+      <input type="text" id="r-regime" data-i18n-ph="f_regime_ph">
+    </div>
+
+    <div class="field">
+      <label for="r-msg" data-i18n="f_msg"></label>
+      <textarea id="r-msg" data-i18n-ph="f_msg_ph"></textarea>
+    </div>
+
+    <button class="btn" id="rsvp-btn" onclick="submitRsvp()" data-i18n="f_btn"></button>
+    <div class="feedback" id="rsvp-feedback" role="status"></div>
+    <p class="privacy" data-i18n="f_privacy"></p>
+  </div>
+
+  <details class="admin">
+    <summary data-i18n="admin_summary"></summary>
+    <div class="stats" id="stats"></div>
+    <div style="overflow-x:auto">
+      <table id="rsvp-table">
+        <thead><tr><th data-i18n="th_nom"></th><th data-i18n="th_presence"></th><th data-i18n="th_pers"></th><th data-i18n="th_tab"></th><th data-i18n="th_regime"></th><th data-i18n="th_msg"></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="annonces" class="reveal">
+  <p class="eyebrow" data-i18n="ann_eyebrow"></p>
+  <h2 data-i18n="ann_h2"></h2>
+  <p class="section-intro" data-i18n="ann_intro"></p>
+
+  <div class="form-card edit-only block" id="post-form">
+    <div class="field">
+      <label for="p-title" data-i18n="ann_add_title"></label>
+      <input type="text" id="p-title">
+    </div>
+    <div class="field">
+      <label for="p-txt" data-i18n="ann_add_txt"></label>
+      <textarea id="p-txt"></textarea>
+    </div>
+    <button class="btn gold" id="post-btn" onclick="publishPost()" data-i18n="ann_add_btn"></button>
+    <div class="feedback" id="post-feedback" role="status"></div>
+  </div>
+
+  <div class="guest-entries" id="posts">
+    <p class="empty-state" data-i18n="ann_empty"></p>
+  </div>
+</section>
+
+<section id="livredor" class="reveal">
+  <p class="eyebrow" data-i18n="lo_eyebrow"></p>
+  <h2 data-i18n="lo_h2"></h2>
+  <p class="section-intro" data-i18n="lo_intro"></p>
+
+  <div class="form-card">
+    <div class="field">
+      <label for="g-nom" data-i18n="lo_nom"></label>
+      <input type="text" id="g-nom" data-i18n-ph="lo_nom_ph">
+    </div>
+    <div class="field">
+      <label for="g-msg" data-i18n="lo_msg"></label>
+      <textarea id="g-msg" data-i18n-ph="lo_msg_ph"></textarea>
+    </div>
+    <button class="btn gold" id="guest-btn" onclick="submitGuestbook()" data-i18n="lo_btn"></button>
+    <div class="feedback" id="guest-feedback" role="status"></div>
+  </div>
+
+  <div class="guest-entries" id="guest-entries">
+    <p class="empty-state" data-i18n="lo_empty"></p>
+  </div>
+</section>
+
+<section class="reveal" style="padding-top:0">
+  <details>
+    <summary data-i18n="howto_summary"></summary>
+    <p style="margin-top:1rem;font-size:.92rem;max-width:42rem" data-i18n="howto_txt"></p>
+  </details>
+</section>
+
+<footer>
+  <span class="script">Emma &amp; Gerhard</span>
+  <p>26 · 12 · 2026 — PARIS</p>
+  <div class="divider"><svg width="60" height="30" viewBox="0 0 60 30"><use href="#brin-or"/></svg></div>
+  <p style="opacity:.75;letter-spacing:.05em" data-i18n="footer_txt"></p>
+  <p style="opacity:.35;font-size:.65rem;margin-top:1.2rem;letter-spacing:.2em">VERSION 4</p>
+</footer>
+
+<script>
+/* ================= TRADUCTIONS ================= */
+const I18N = {
+  fr: {
+    nav_histoire:"Notre histoire", nav_programme:"Programme", nav_opera:"L'Opéra", nav_livredor:"Livre d'or",
+    hero_pre:"Nous nous marions", hero_date:"Samedi 26 décembre 2026 · Paris",
+    hero_lede:"Le plus beau jour de notre vie approche, et nous voulons le vivre entouré·e·s de tous nos êtres chers. Ce site vous tiendra au courant des préparatifs — et il vous permet de confirmer votre présence en deux minutes.",
+    hero_btn:"Je confirme ma présence", scroll_hint:"Faites défiler",
+    hist_eyebrow:"En quelques images", hist_h2:"Notre histoire",
+    hist_intro:"Quelques souvenirs en attendant d'en créer de nouveaux avec vous.",
+    photo_placeholder:"Votre photo ici", photo_cap1:"La rencontre", photo_cap2:"La demande", photo_cap3:"Bientôt mariés !",
+    prog_eyebrow:"La journée", prog_h2:"Programme de la représentation",
+    prog_intro:"Comme toute grande première, notre journée se jouera en plusieurs actes. Levée de rideau le 26 décembre.",
+    prog_date:"Samedi 26 décembre 2026",
+    acte0_label:"Ouverture", acte0_heure:"14H00", acte0_titre:"Cérémonie à la mairie de Pantin",
+    acte0_txt:"Le moment où tout commence : nous nous dirons oui à la mairie de Pantin (45 avenue du Général Leclerc, 93500 Pantin). Merci d'arriver à 13h45. Ensuite, direction l'Opéra — le RER E relie directement Pantin à Haussmann Saint-Lazare, à deux pas du Palais Garnier.",
+    acte1_label:"Acte I", acte1_titre:"Visite du Palais Garnier",
+    acte1_txt:"Marbres, dorures et grand escalier de légende : nous vous emmenons flâner dans l'un des plus beaux monuments de Paris, en visite libre, tous ensemble.",
+    acte1_note:"Rendez-vous à 15h15 précises — détails ci-dessous",
+    acte2_label:"Entracte", acte2_heure:"VERS 17H30", acte2_titre:"Photo de groupe & pause gourmande",
+    acte2_txt:"Grande photo de tous les invités devant la façade illuminée du Palais à la sortie — ne partez pas avant ! Puis un moment pour se réchauffer dans le quartier.",
+    acte3_label:"Acte II", acte3_heure:"HORAIRE À CONFIRMER", acte3_titre:"Soirée",
+    acte3_txt:"Dîner, discours (promis, pas trop longs) et piste de danse jusqu'au bout de la nuit.",
+    op_eyebrow:"Acte I — mode d'emploi", op_h2:"La visite du Palais Garnier",
+    op_intro:"Nous avons réservé une visite de groupe en autonomie : chacun déambule à son rythme, environ 1h30 de pur émerveillement. Quelques consignes pour que tout se passe comme sur des roulettes :",
+    op_c1_t:"Rendez-vous à 15h15", op_c1_p:"À l'entrée des visiteurs, à l'angle des rues Scribe et Auber, 75009 Paris. Nous passons le contrôle de sécurité tous ensemble avec notre billet de groupe : la ponctualité est votre plus beau cadeau.",
+    op_c2_t:"Comment venir", op_c2_p:"Métro Opéra (lignes 3, 7, 8), RER A station Auber, ou bus 20, 21, 27, 29, 32, 45, 52, 66, 68, 95.",
+    op_c3_t:"Voyagez léger", op_c3_p:"Valises et sacs de voyage sont interdits dans le Palais, et il n'y a pas de vestiaire en journée. Un petit sac à main, c'est parfait.",
+    op_c4_t:"Tablette multimédia", op_c4_p:"Pour percer tous les secrets du lieu : un parcours commenté de 1h30 avec images d'archives et réalité augmentée (~8 €). Indiquez dans le questionnaire si vous en voulez une, on s'occupe de tout.",
+    rsvp_eyebrow:"Réservé aux plus chanceux", rsvp_h2:"Confirmer sa présence",
+    rsvp_intro:"Répondez avant le 1er novembre 2026 pour nous aider à tout organiser. Une réponse par foyer suffit.",
+    f_nom:"Votre nom (et celui de vos accompagnants)", f_nom_ph:"Ex. : Marie Dupont et Jules Dupont",
+    f_presence:"Serez-vous des nôtres ?", f_oui:"Oui, avec joie !", f_non:"Hélas, non",
+    f_nb:"Nombre de personnes (vous inclus)",
+    f_tab:"Souhaitez-vous une tablette multimédia pour la visite de l'Opéra ? (~8 €/pers., réglée sur place)",
+    f_tab_oui:"Oui, je veux tout savoir", f_tab_non:"Non, je flânerai",
+    f_regime:"Régime alimentaire ou allergies", f_regime_ph:"Végétarien, sans gluten, allergie aux noix…",
+    f_msg:"Un petit mot pour nous ? (facultatif)", f_msg_ph:"Une chanson pour la piste de danse, une anecdote, une demande spéciale…",
+    f_btn:"Envoyer ma réponse", f_btn_sending:"Envoi en cours…",
+    f_privacy:"Vos réponses sont enregistrées pour les mariés.",
+    fb_need_name:"Indiquez votre nom pour que l'on sache qui répond ✨",
+    fb_need_presence:"Dites-nous si vous serez des nôtres !",
+    fb_ok:"Merci {n} ! Votre réponse est bien enregistrée. On a hâte ! 💍",
+    fb_err:"Oups, l'enregistrement n'a pas fonctionné. Réessayez, ou envoyez-nous votre réponse directement.",
+    admin_summary:"Espace des mariés — voir les réponses",
+    th_nom:"Nom", th_presence:"Présence", th_pers:"Pers.", th_tab:"Tablettes", th_regime:"Régime", th_msg:"Message",
+    stat_rep:"réponses", stat_pers:"invités présents", stat_tab:"tablettes à prévoir",
+    val_oui:"Oui", val_non:"Non", val_np:"Non précisé",
+    lo_eyebrow:"À vos plumes", lo_h2:"Livre d'or",
+    lo_intro:"Laissez-nous un mot doux, un souvenir, un conseil de vieux couple ou une prédiction audacieuse. Tout le monde pourra le lire ici.",
+    lo_nom:"Votre nom", lo_nom_ph:"Tante Sophie", lo_msg:"Votre message", lo_msg_ph:"Écrivez ici…",
+    lo_btn:"Signer le livre d'or", lo_btn_sending:"Signature en cours…",
+    lo_need:"Un nom et un message, et le tour est joué !",
+    lo_ok:"Votre mot est dans le livre d'or, merci ! 🖋️",
+    lo_err:"Impossible d'enregistrer pour le moment. Réessayez dans un instant.",
+    lo_empty:"Le livre d'or attend sa première signature…",
+    howto_summary:"Mode d'emploi — ajouter vos photos",
+    howto_txt:"Pour remplacer un cadre par une vraie photo : hébergez votre image en ligne, puis dans le code, remplacez le contenu du bloc photo par une balise img avec l'adresse de votre image. Le cadre et la légende s'adaptent automatiquement. Vous pouvez aussi demander à Claude de le faire en lui donnant les adresses des images.",
+    hist_hint:"✎ Mode édition : cliquez sur un cadre pour y placer votre photo.",
+    gal_cap:"Légende de la photo", gal_file:"Choisir l'image", gal_btn:"Ajouter à la galerie",
+    gal_need:"Choisissez d'abord une image.", gal_ok:"Photo enregistrée ! Tous vos invités la voient.", gal_err:"Impossible d'enregistrer la photo, réessayez.",
+    img_toobig:"Image trop lourde même après compression — choisissez-en une plus légère.",
+    sec_add_summary:"Ajouter une section au site", sec_title:"Titre de la section", sec_txt:"Texte de la section",
+    sec_img:"Image (facultatif)", sec_btn:"Créer la section", sec_need:"Il faut un titre et un texte.",
+    sec_ok:"Section publiée ! Elle apparaît juste au-dessus.", sec_err:"Impossible de créer la section, réessayez.",
+    nav_annonces:"Annonces",
+    ann_eyebrow:"Quoi de neuf", ann_h2:"Nos annonces",
+    ann_intro:"Les dernières nouvelles des préparatifs, racontées par les futurs mariés — entre stress et petites anecdotes.",
+    ann_empty:"Pas encore d'annonce — revenez bientôt !",
+    ann_add_title:"Titre de l'annonce", ann_add_txt:"Votre annonce", ann_add_btn:"Publier l'annonce",
+    ann_ok:"Annonce publiée ! Tous vos invités la voient désormais.", ann_err:"Publication impossible pour le moment, réessayez.",
+    ann_need:"Il faut un titre et un texte pour publier.",
+    edit_prompt:"Code d'accès des mariés", edit_enter:"Entrer", edit_badcode:"Code incorrect.",
+    edit_banner:"Mode édition — cliquez sur un texte pour le modifier, puis enregistrez.",
+    edit_save:"Enregistrer", edit_quit:"Quitter sans enregistrer",
+    edit_saved:"✓ Modifications enregistrées et visibles par vos invités",
+    post_del:"Supprimer",
+    footer_txt:"Une question ? Écrivez-nous, appelez-nous, envoyez un pigeon voyageur."
+  },
+  es: {
+    nav_histoire:"Nuestra historia", nav_programme:"Programa", nav_opera:"La Ópera", nav_livredor:"Libro de firmas",
+    hero_pre:"Nos casamos", hero_date:"Sábado 26 de diciembre de 2026 · París",
+    hero_lede:"El día más bonito de nuestra vida se acerca, y queremos vivirlo rodeados de todos nuestros seres queridos. Esta web os mantendrá al tanto de los preparativos — y os permite confirmar vuestra asistencia en dos minutos.",
+    hero_btn:"Confirmo mi asistencia", scroll_hint:"Desliza hacia abajo",
+    hist_eyebrow:"En unas imágenes", hist_h2:"Nuestra historia",
+    hist_intro:"Algunos recuerdos, mientras esperamos crear otros nuevos con vosotros.",
+    photo_placeholder:"Tu foto aquí", photo_cap1:"El encuentro", photo_cap2:"La pedida", photo_cap3:"¡Pronto casados!",
+    prog_eyebrow:"El gran día", prog_h2:"Programa de la función",
+    prog_intro:"Como todo gran estreno, nuestro día se representará en varios actos. El telón se levanta el 26 de diciembre.",
+    prog_date:"Sábado 26 de diciembre de 2026",
+    acte0_label:"Obertura", acte0_heure:"14H00", acte0_titre:"Ceremonia en el ayuntamiento de Pantin",
+    acte0_txt:"El momento en que todo comienza: nos daremos el sí en el ayuntamiento de Pantin (45 avenue du Général Leclerc, 93500 Pantin). Por favor, llegad a las 13:45. Después, rumbo a la Ópera — el tren RER E une directamente Pantin con Haussmann Saint-Lazare, a dos pasos del Palacio Garnier.",
+    acte1_label:"Acto I", acte1_titre:"Visita al Palacio Garnier",
+    acte1_txt:"Mármoles, dorados y una escalinata de leyenda: os llevamos a pasear por uno de los monumentos más bellos de París, en visita libre, todos juntos.",
+    acte1_note:"Punto de encuentro a las 15:15 en punto — detalles más abajo",
+    acte2_label:"Entreacto", acte2_heure:"HACIA LAS 17:30", acte2_titre:"Foto de grupo y pausa golosa",
+    acte2_txt:"Gran foto de todos los invitados delante de la fachada iluminada del Palacio a la salida — ¡no os vayáis antes! Después, un momento para entrar en calor por el barrio.",
+    acte3_label:"Acto II", acte3_heure:"HORARIO POR CONFIRMAR", acte3_titre:"Fiesta",
+    acte3_txt:"Cena, discursos (prometido, no muy largos) y pista de baile hasta el final de la noche.",
+    op_eyebrow:"Acto I — instrucciones", op_h2:"La visita al Palacio Garnier",
+    op_intro:"Hemos reservado una visita de grupo libre: cada uno pasea a su ritmo, alrededor de 1h30 de pura maravilla. Algunas indicaciones para que todo salga perfecto:",
+    op_c1_t:"Encuentro a las 15:15", op_c1_p:"En la entrada de visitantes, en la esquina de las calles Scribe y Auber, 75009 París. Pasamos el control de seguridad todos juntos con nuestra entrada de grupo: la puntualidad es vuestro mejor regalo.",
+    op_c2_t:"Cómo llegar", op_c2_p:"Metro Opéra (líneas 3, 7, 8), RER A estación Auber, o autobuses 20, 21, 27, 29, 32, 45, 52, 66, 68, 95.",
+    op_c3_t:"Viajad ligeros", op_c3_p:"Las maletas y bolsas de viaje están prohibidas en el Palacio, y no hay guardarropa durante el día. Un bolso pequeño es perfecto.",
+    op_c4_t:"Tableta multimedia", op_c4_p:"Para descubrir todos los secretos del lugar: un recorrido comentado de 1h30 con imágenes de archivo y realidad aumentada (~8 €). Indicad en el cuestionario si queréis una, nosotros nos encargamos.",
+    rsvp_eyebrow:"Reservado a los más afortunados", rsvp_h2:"Confirmar asistencia",
+    rsvp_intro:"Responded antes del 1 de noviembre de 2026 para ayudarnos a organizarlo todo. Una respuesta por familia es suficiente.",
+    f_nom:"Vuestro nombre (y el de vuestros acompañantes)", f_nom_ph:"Ej.: María García y Julio García",
+    f_presence:"¿Estaréis con nosotros?", f_oui:"¡Sí, con mucha alegría!", f_non:"Por desgracia, no",
+    f_nb:"Número de personas (incluido tú)",
+    f_tab:"¿Queréis una tableta multimedia para la visita a la Ópera? (~8 €/pers., se paga allí)",
+    f_tab_oui:"Sí, quiero saberlo todo", f_tab_non:"No, pasearé tranquilo",
+    f_regime:"Régimen alimentario o alergias", f_regime_ph:"Vegetariano, sin gluten, alergia a los frutos secos…",
+    f_msg:"¿Unas palabras para nosotros? (opcional)", f_msg_ph:"Una canción para la pista de baile, una anécdota, una petición especial…",
+    f_btn:"Enviar mi respuesta", f_btn_sending:"Enviando…",
+    f_privacy:"Vuestras respuestas se guardan para los novios.",
+    fb_need_name:"Indicad vuestro nombre para que sepamos quién responde ✨",
+    fb_need_presence:"¡Decidnos si estaréis con nosotros!",
+    fb_ok:"¡Gracias {n}! Vuestra respuesta ha quedado registrada. ¡Qué ganas! 💍",
+    fb_err:"Vaya, no se pudo guardar. Intentadlo de nuevo, o enviadnos vuestra respuesta directamente.",
+    admin_summary:"Espacio de los novios — ver las respuestas",
+    th_nom:"Nombre", th_presence:"Asistencia", th_pers:"Pers.", th_tab:"Tabletas", th_regime:"Régimen", th_msg:"Mensaje",
+    stat_rep:"respuestas", stat_pers:"invitados presentes", stat_tab:"tabletas a prever",
+    val_oui:"Sí", val_non:"No", val_np:"Sin precisar",
+    lo_eyebrow:"A vuestras plumas", lo_h2:"Libro de firmas",
+    lo_intro:"Dejadnos unas palabras bonitas, un recuerdo, un consejo de pareja veterana o una predicción audaz. Todos podrán leerlo aquí.",
+    lo_nom:"Vuestro nombre", lo_nom_ph:"Tía Carmen", lo_msg:"Vuestro mensaje", lo_msg_ph:"Escribid aquí…",
+    lo_btn:"Firmar el libro", lo_btn_sending:"Firmando…",
+    lo_need:"Un nombre y un mensaje, ¡y listo!",
+    lo_ok:"¡Vuestras palabras ya están en el libro de firmas, gracias! 🖋️",
+    lo_err:"No se pudo guardar en este momento. Intentadlo de nuevo en un instante.",
+    lo_empty:"El libro de firmas espera su primera firma…",
+    howto_summary:"Instrucciones — añadir vuestras fotos",
+    howto_txt:"Para sustituir un marco por una foto real: alojad la imagen en línea y, en el código, sustituid el contenido del bloque de foto por una etiqueta img con la dirección de vuestra imagen. El marco y la leyenda se adaptan automáticamente.",
+    hist_hint:"✎ Modo edición: haced clic en un marco para colocar vuestra foto.",
+    gal_cap:"Leyenda de la foto", gal_file:"Elegir la imagen", gal_btn:"Añadir a la galería",
+    gal_need:"Elegid primero una imagen.", gal_ok:"¡Foto guardada! Todos vuestros invitados la ven.", gal_err:"No se pudo guardar la foto, intentadlo de nuevo.",
+    img_toobig:"Imagen demasiado pesada incluso comprimida — elegid una más ligera.",
+    sec_add_summary:"Añadir una sección a la web", sec_title:"Título de la sección", sec_txt:"Texto de la sección",
+    sec_img:"Imagen (opcional)", sec_btn:"Crear la sección", sec_need:"Hace falta un título y un texto.",
+    sec_ok:"¡Sección publicada! Aparece justo arriba.", sec_err:"No se pudo crear la sección, intentadlo de nuevo.",
+    nav_annonces:"Novedades",
+    ann_eyebrow:"Qué hay de nuevo", ann_h2:"Nuestras novedades",
+    ann_intro:"Las últimas noticias de los preparativos, contadas por los futuros novios — entre nervios y pequeñas anécdotas.",
+    ann_empty:"Todavía no hay novedades — ¡volved pronto!",
+    ann_add_title:"Título de la novedad", ann_add_txt:"Vuestra novedad", ann_add_btn:"Publicar",
+    ann_ok:"¡Novedad publicada! Todos vuestros invitados ya la ven.", ann_err:"No se pudo publicar en este momento, intentadlo de nuevo.",
+    ann_need:"Hace falta un título y un texto para publicar.",
+    edit_prompt:"Código de acceso de los novios", edit_enter:"Entrar", edit_badcode:"Código incorrecto.",
+    edit_banner:"Modo edición — haced clic en un texto para modificarlo y luego guardad.",
+    edit_save:"Guardar", edit_quit:"Salir sin guardar",
+    edit_saved:"✓ Cambios guardados y visibles para vuestros invitados",
+    post_del:"Eliminar",
+    footer_txt:"¿Alguna pregunta? Escribidnos, llamadnos, enviad una paloma mensajera."
+  }
+};
+
+let lang = 'fr';
+function t(key){ return (I18N[lang] && I18N[lang][key]) || I18N.fr[key] || ''; }
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('btn-fr').classList.toggle('active', l==='fr');
+  document.getElementById('btn-es').classList.toggle('active', l==='es');
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  loadRsvps(); /* re-traduit le tableau et les stats */
+}
+
+/* ================= MODE ÉDITION (mariés) ================= */
+const EDIT_CODE = 'EMMA-GERHARD-2026'; /* ← changez ce code et gardez-le secret */
+let editing = false;
+let overrides = {fr:{}, es:{}};
+
+function toggleCodePop(){
+  const p = document.getElementById('code-pop');
+  p.style.display = (p.style.display === 'flex') ? 'none' : 'flex';
+  if(p.style.display === 'flex') document.getElementById('code-input').focus();
+}
+function checkCode(){
+  const v = document.getElementById('code-input').value.trim();
+  const m = document.getElementById('code-msg');
+  if(v === EDIT_CODE){
+    document.getElementById('code-pop').style.display = 'none';
+    document.getElementById('code-input').value = ''; m.textContent = '';
+    enterEdit();
+  }else{
+    m.textContent = t('edit_badcode');
+  }
+}
+document.addEventListener('keydown', e => {
+  if(e.key === 'Enter' && document.activeElement === document.getElementById('code-input')) checkCode();
+});
+
+function enterEdit(){
+  editing = true;
+  document.body.classList.add('editing');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    if(el.closest('nav') || el.tagName === 'BUTTON' || el.tagName === 'A' || el.closest('#code-pop')) return;
+    el.setAttribute('contenteditable','true');
+  });
+  const b = document.createElement('div');
+  b.id = 'edit-banner';
+  const label = document.createElement('span'); label.id = 'edit-banner-label'; label.textContent = t('edit_banner');
+  const save = document.createElement('button'); save.textContent = t('edit_save'); save.onclick = saveEdits;
+  const quit = document.createElement('button'); quit.className = 'ghost'; quit.textContent = t('edit_quit'); quit.onclick = () => exitEdit(true);
+  b.appendChild(label); b.appendChild(save); b.appendChild(quit);
+  document.body.appendChild(b);
+}
+async function saveEdits(){
+  document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+    const k = el.dataset.i18n;
+    if(!k) return;
+    const txt = el.textContent.trim();
+    if(txt && txt !== I18N[lang][k]){
+      overrides[lang] = overrides[lang] || {};
+      overrides[lang][k] = txt;
+      I18N[lang][k] = txt;
+    }
+  });
+  const label = document.getElementById('edit-banner-label');
+  try{
+    if(!hasStorage) throw new Error('no-storage');
+    await window.storage.set('content-overrides', JSON.stringify(overrides), true);
+    if(label) label.textContent = t('edit_saved');
+    setTimeout(() => exitEdit(false), 1600);
+  }catch(e){
+    if(label) label.textContent = t('ann_err');
+  }
+}
+function exitEdit(revert){
+  editing = false;
+  document.body.classList.remove('editing');
+  document.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+  const b = document.getElementById('edit-banner'); if(b) b.remove();
+  if(revert) setLang(lang); /* restaure les textes officiels si on quitte sans enregistrer */
+}
+async function loadOverrides(){
+  try{
+    const r = await window.storage.get('content-overrides', true);
+    if(r && r.value){
+      overrides = JSON.parse(r.value);
+      ['fr','es'].forEach(l => { if(overrides[l]) Object.assign(I18N[l], overrides[l]); });
+      setLang(lang);
+    }
+  }catch(e){ /* pas encore de modifications : normal */ }
+}
+
+/* ================= ANNONCES ================= */
+async function publishPost(){
+  const title = document.getElementById('p-title').value.trim();
+  const txt = document.getElementById('p-txt').value.trim();
+  if(!title || !txt){ show('post-feedback','err', t('ann_need')); return; }
+  const btn = document.getElementById('post-btn');
+  btn.disabled = true;
+  try{
+    if(!hasStorage) throw new Error('no-storage');
+    await window.storage.set('post:' + uid(), JSON.stringify({title, txt, date:new Date().toISOString()}), true);
+    document.getElementById('p-title').value = ''; document.getElementById('p-txt').value = '';
+    show('post-feedback','ok', t('ann_ok'));
+    loadPosts();
+  }catch(e){
+    show('post-feedback','err', t('ann_err'));
+  }finally{
+    btn.disabled = false;
+  }
+}
+async function removePost(key){
+  try{
+    await window.storage.delete(key, true);
+    loadPosts();
+  }catch(e){}
+}
+async function loadPosts(){
+  if(!hasStorage) return;
+  try{
+    const res = await window.storage.list('post:', true);
+    const keys = (res && res.keys) ? res.keys : [];
+    const posts = [];
+    for(const k of keys){
+      try{
+        const item = await window.storage.get(k, true);
+        if(item && item.value){ const p = JSON.parse(item.value); p._key = k; posts.push(p); }
+      }catch(e){}
+    }
+    posts.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+    const box = document.getElementById('posts');
+    if(posts.length === 0) return;
+    box.innerHTML = '';
+    for(const p of posts){
+      const div = document.createElement('div');
+      div.className = 'entry';
+      const d = document.createElement('div'); d.className = 'post-date';
+      d.textContent = new Date(p.date).toLocaleDateString(lang === 'es' ? 'es-ES' : 'fr-FR', {day:'numeric', month:'long', year:'numeric'});
+      const who = document.createElement('div'); who.className = 'who'; who.textContent = p.title;
+      const body = document.createElement('p'); body.textContent = p.txt;
+      div.appendChild(d); div.appendChild(who); div.appendChild(body);
+      const del = document.createElement('button');
+      del.className = 'post-del edit-only inline';
+      del.textContent = t('post_del');
+      del.onclick = () => removePost(p._key);
+      div.appendChild(del);
+      box.appendChild(div);
+    }
+  }catch(e){}
+}
+
+/* ================= PHOTOS (slots + galerie) ================= */
+let currentSlot = null;
+function slotClick(id){
+  if(!editing) return;
+  currentSlot = id;
+  document.getElementById('slot-file').click();
+}
+function resizeImage(file){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const max = 1400;
+      let w = img.width, h = img.height;
+      if(Math.max(w,h) > max){ const r = max / Math.max(w,h); w = Math.round(w*r); h = Math.round(h*r); }
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      resolve(c.toDataURL('image/jpeg', .82));
+    };
+    img.onerror = reject;
+    img.src = url;
+  });
+}
+async function slotFileChosen(ev){
+  const f = ev.target.files[0];
+  ev.target.value = '';
+  if(!f || !currentSlot) return;
+  try{
+    const data = await resizeImage(f);
+    if(data.length > 4800000){ show('photo-feedback','err', t('img_toobig')); return; }
+    if(!hasStorage) throw new Error('no-storage');
+    await window.storage.set('photo:' + currentSlot, data, true);
+    renderSlot(currentSlot, data);
+    show('photo-feedback','ok', t('gal_ok'));
+  }catch(e){
+    show('photo-feedback','err', t('gal_err'));
+  }
+}
+function renderSlot(id, data){
+  const ph = document.getElementById(id);
+  ph.innerHTML = '';
+  const im = document.createElement('img');
+  im.src = data; im.alt = '';
+  ph.appendChild(im);
+}
+async function loadSlotPhotos(){
+  for(const id of ['photo-1','photo-2','photo-3']){
+    try{
+      const r = await window.storage.get('photo:' + id, true);
+      if(r && r.value) renderSlot(id, r.value);
+    }catch(e){ /* pas encore de photo : normal */ }
+  }
+}
+async function addGalleryPhoto(){
+  const cap = document.getElementById('gp-cap').value.trim();
+  const f = document.getElementById('gp-file').files[0];
+  if(!f){ show('photo-feedback','err', t('gal_need')); return; }
+  try{
+    const data = await resizeImage(f);
+    if(data.length > 4800000){ show('photo-feedback','err', t('img_toobig')); return; }
+    if(!hasStorage) throw new Error('no-storage');
+    await window.storage.set('gphoto:' + uid(), JSON.stringify({img:data, caption:cap, date:new Date().toISOString()}), true);
+    document.getElementById('gp-cap').value = '';
+    document.getElementById('gp-file').value = '';
+    show('photo-feedback','ok', t('gal_ok'));
+    loadGalleryPhotos();
+  }catch(e){
+    show('photo-feedback','err', t('gal_err'));
+  }
+}
+async function removeGalleryPhoto(key){
+  try{ await window.storage.delete(key, true); loadGalleryPhotos(); }catch(e){}
+}
+async function loadGalleryPhotos(){
+  if(!hasStorage) return;
+  try{
+    const res = await window.storage.list('gphoto:', true);
+    const keys = (res && res.keys) ? res.keys : [];
+    document.querySelectorAll('#gallery .frame.dyn').forEach(el => el.remove());
+    const items = [];
+    for(const k of keys){
+      try{
+        const it = await window.storage.get(k, true);
+        if(it && it.value){ const p = JSON.parse(it.value); p._key = k; items.push(p); }
+      }catch(e){}
+    }
+    items.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    const gal = document.getElementById('gallery');
+    for(const p of items){
+      const fig = document.createElement('figure'); fig.className = 'frame dyn';
+      const ph = document.createElement('div'); ph.className = 'ph';
+      const im = document.createElement('img'); im.src = p.img; im.alt = p.caption || '';
+      ph.appendChild(im);
+      const cap = document.createElement('figcaption'); cap.textContent = p.caption || '';
+      fig.appendChild(ph); fig.appendChild(cap);
+      const del = document.createElement('button');
+      del.className = 'post-del edit-only inline'; del.textContent = t('post_del');
+      del.onclick = () => removeGalleryPhoto(p._key);
+      fig.appendChild(del);
+      gal.appendChild(fig);
+    }
+  }catch(e){}
+}
+
+/* ================= SECTIONS PERSONNALISÉES ================= */
+async function createSection(){
+  const title = document.getElementById('s-title').value.trim();
+  const txt = document.getElementById('s-txt').value.trim();
+  const f = document.getElementById('s-file').files[0];
+  if(!title || !txt){ show('sec-feedback','err', t('sec_need')); return; }
+  const btn = document.getElementById('sec-btn');
+  btn.disabled = true;
+  try{
+    let img = null;
+    if(f){
+      img = await resizeImage(f);
+      if(img.length > 4800000){ show('sec-feedback','err', t('img_toobig')); btn.disabled = false; return; }
+    }
+    if(!hasStorage) throw new Error('no-storage');
+    await window.storage.set('section:' + uid(), JSON.stringify({title, txt, img, date:new Date().toISOString()}), true);
+    document.getElementById('s-title').value = '';
+    document.getElementById('s-txt').value = '';
+    document.getElementById('s-file').value = '';
+    show('sec-feedback','ok', t('sec_ok'));
+    loadSections();
+  }catch(e){
+    show('sec-feedback','err', t('sec_err'));
+  }finally{
+    btn.disabled = false;
+  }
+}
+async function removeSection(key){
+  try{ await window.storage.delete(key, true); loadSections(); }catch(e){}
+}
+async function loadSections(){
+  if(!hasStorage) return;
+  try{
+    const res = await window.storage.list('section:', true);
+    const keys = (res && res.keys) ? res.keys : [];
+    const items = [];
+    for(const k of keys){
+      try{
+        const it = await window.storage.get(k, true);
+        if(it && it.value){ const p = JSON.parse(it.value); p._key = k; items.push(p); }
+      }catch(e){}
+    }
+    items.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    const box = document.getElementById('custom-sections');
+    box.innerHTML = '';
+    for(const p of items){
+      const sec = document.createElement('section');
+      sec.className = 'reveal in';
+      const h = document.createElement('h2'); h.textContent = p.title;
+      sec.appendChild(h);
+      if(p.img){
+        const wrap = document.createElement('div'); wrap.className = 'custom-img';
+        const im = document.createElement('img'); im.src = p.img; im.alt = p.title;
+        wrap.appendChild(im); sec.appendChild(wrap);
+      }
+      const body = document.createElement('p'); body.className = 'custom-txt'; body.textContent = p.txt;
+      sec.appendChild(body);
+      const del = document.createElement('button');
+      del.className = 'post-del edit-only inline'; del.textContent = t('post_del');
+      del.onclick = () => removeSection(p._key);
+      sec.appendChild(del);
+      box.appendChild(sec);
+    }
+  }catch(e){}
+}
+
+/* ================= CARTE EFFET APPLE ================= */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const card = document.getElementById('invite-card');
+const heroZone = document.getElementById('hero-zone');
+let ticking = false;
+function appleScroll(){
+  if(reduceMotion){ return; }
+  const zoneH = heroZone.offsetHeight - window.innerHeight;
+  const progress = Math.min(Math.max(window.scrollY / Math.max(zoneH,1), 0), 1);
+  /* phase 1 (0 → .35) : la carte grandit de .9 à 1 ; phase 2 (.55 → 1) : elle rétrécit à .8 et s'estompe */
+  let scale, opacity = 1, ty = 0;
+  if(progress < .35){
+    const p = progress / .35;
+    scale = .9 + .1 * easeOut(p);
+  }else if(progress < .55){
+    scale = 1;
+  }else{
+    const p = (progress - .55) / .45;
+    scale = 1 - .2 * easeIn(p);
+    opacity = 1 - .85 * p;
+    ty = -40 * p;
+  }
+  card.style.transform = 'scale(' + scale.toFixed(4) + ') translateY(' + ty.toFixed(1) + 'px)';
+  card.style.opacity = opacity.toFixed(3);
+  const hint = document.querySelector('.scroll-hint');
+  if(hint) hint.style.opacity = Math.max(0, .75 - progress * 2.4);
+  ticking = false;
+}
+function easeOut(p){ return 1 - Math.pow(1 - p, 3); }
+function easeIn(p){ return p * p; }
+window.addEventListener('scroll', () => {
+  if(!ticking){ requestAnimationFrame(appleScroll); ticking = true; }
+}, {passive:true});
+appleScroll();
+
+/* ================= MENU MOBILE ================= */
+function toggleMenu(btn){
+  const menu = document.getElementById('menu');
+  const open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+}
+/* ================= NAVIGATION INTERNE (sans popup) ================= */
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  const target = document.querySelector(a.getAttribute('href'));
+  if(target) target.scrollIntoView({behavior:'smooth'});
+  const menu = document.getElementById('menu');
+  if(menu) menu.classList.remove('open');
+  const b = document.querySelector('.burger');
+  if(b){ b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+}));
+
+/* ================= ANIMATIONS DOUCES ================= */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ================= STOCKAGE ================= */
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+function radio(name){ const el = document.querySelector('input[name="'+name+'"]:checked'); return el ? el.value : ''; }
+function show(id, cls, msg){ const f = document.getElementById(id); f.className = 'feedback ' + cls; f.textContent = msg; }
+const hasStorage = typeof window.storage !== 'undefined';
+
+/* ================= RSVP ================= */
+async function submitRsvp(){
+  const nom = document.getElementById('r-nom').value.trim();
+  const presence = radio('presence');
+  if(!nom){ show('rsvp-feedback','err', t('fb_need_name')); return; }
+  if(!presence){ show('rsvp-feedback','err', t('fb_need_presence')); return; }
+  const data = {
+    nom, presence,
+    nb: document.getElementById('r-nb').value || '1',
+    tablette: radio('tablette') || 'np',
+    regime: document.getElementById('r-regime').value.trim(),
+    message: document.getElementById('r-msg').value.trim(),
+    date: new Date().toISOString()
+  };
+  const btn = document.getElementById('rsvp-btn');
+  btn.disabled = true; btn.textContent = t('f_btn_sending');
+  try{
+    if(!hasStorage) throw new Error('no-storage');
+    await window.storage.set('rsvp:' + uid(), JSON.stringify(data), true);
+    show('rsvp-feedback','ok', t('fb_ok').replace('{n}', nom.split(' ')[0]));
+    loadRsvps();
+  }catch(e){
+    show('rsvp-feedback','err', t('fb_err'));
+  }finally{
+    btn.disabled = false; btn.textContent = t('f_btn');
+  }
+}
+
+function trVal(v){ return v === 'oui' ? t('val_oui') : v === 'non' ? t('val_non') : t('val_np'); }
+
+async function loadRsvps(){
+  if(!hasStorage) return;
+  try{
+    const res = await window.storage.list('rsvp:', true);
+    const keys = (res && res.keys) ? res.keys : [];
+    const rows = [];
+    for(const k of keys){
+      try{
+        const item = await window.storage.get(k, true);
+        if(item && item.value) rows.push(JSON.parse(item.value));
+      }catch(e){}
+    }
+    rows.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    const tbody = document.querySelector('#rsvp-table tbody');
+    tbody.innerHTML = '';
+    let pers = 0, tab = 0;
+    for(const r of rows){
+      const tr = document.createElement('tr');
+      [r.nom, trVal(r.presence), r.nb, r.tablette === 'oui' ? r.nb : '0', r.regime || '—', r.message || '—'].forEach(v => {
+        const td = document.createElement('td'); td.textContent = v; tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+      if(r.presence === 'oui'){ pers += parseInt(r.nb)||0; if(r.tablette === 'oui') tab += parseInt(r.nb)||0; }
+    }
+    document.getElementById('stats').innerHTML =
+      '<div class="stat"><b>'+rows.length+'</b><span>'+t('stat_rep')+'</span></div>'+
+      '<div class="stat"><b>'+pers+'</b><span>'+t('stat_pers')+'</span></div>'+
+      '<div class="stat"><b>'+tab+'</b><span>'+t('stat_tab')+'</span></div>';
+  }catch(e){}
+}
+
+/* ================= LIVRE D'OR ================= */
+async function submitGuestbook(){
+  const nom = document.getElementById('g-nom').value.trim();
+  const msg = document.getElementById('g-msg').value.trim();
+  if(!nom || !msg){ show('guest-feedback','err', t('lo_need')); return; }
+  const btn = document.getElementById('guest-btn');
+  btn.disabled = true; btn.textContent = t('lo_btn_sending');
+  try{
+    if(!hasStorage) throw new Error('no-storage');
+    await window.storage.set('guestbook:' + uid(), JSON.stringify({nom, msg, date:new Date().toISOString()}), true);
+    document.getElementById('g-nom').value = ''; document.getElementById('g-msg').value = '';
+    show('guest-feedback','ok', t('lo_ok'));
+    loadGuestbook();
+  }catch(e){
+    show('guest-feedback','err', t('lo_err'));
+  }finally{
+    btn.disabled = false; btn.textContent = t('lo_btn');
+  }
+}
+
+async function loadGuestbook(){
+  if(!hasStorage) return;
+  try{
+    const res = await window.storage.list('guestbook:', true);
+    const keys = (res && res.keys) ? res.keys : [];
+    const entries = [];
+    for(const k of keys){
+      try{
+        const item = await window.storage.get(k, true);
+        if(item && item.value) entries.push(JSON.parse(item.value));
+      }catch(e){}
+    }
+    entries.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+    const box = document.getElementById('guest-entries');
+    if(entries.length === 0) return;
+    box.innerHTML = '';
+    for(const e of entries){
+      const div = document.createElement('div');
+      div.className = 'entry';
+      const who = document.createElement('div'); who.className = 'who'; who.textContent = e.nom;
+      const p = document.createElement('p'); p.textContent = e.msg;
+      div.appendChild(who); div.appendChild(p);
+      box.appendChild(div);
+    }
+  }catch(e){}
+}
+
+/* ================= INIT ================= */
+setLang('fr');
+loadGuestbook();
+loadPosts();
+if(hasStorage){ loadOverrides(); loadSlotPhotos(); loadGalleryPhotos(); loadSections(); }
+</script>
+</body>
+</html>
