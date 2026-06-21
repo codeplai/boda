@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <div class="mono">E&amp;G</div>
+    <div class="mono">Emma &amp; Gerhard</div>
     <div class="actions">
       <div class="lang-switch">
         <button :class="{ active: $i18n.locale === 'fr' }" @click="$i18n.locale = 'fr'">FR</button>
@@ -15,8 +15,8 @@
     <ul :class="{ open: menuOpen }" @click="menuOpen = false">
       <li><a href="#histoire">{{ $t('nav_histoire') }}</a></li>
       <li><a href="#programme">{{ $t('nav_programme') }}</a></li>
-      <li><a href="#opera">{{ $t('nav_opera') }}</a></li>
-      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#regalos">{{ $t('nav_regalos') }}</a></li>
+      <li><a href="#cuestionario">{{ $t('nav_cuestionario') }}</a></li>
       <li><a href="#livredor">{{ $t('nav_livredor') }}</a></li>
     </ul>
   </nav>
@@ -44,8 +44,9 @@ const menuOpen = ref(false)
 .mono {
   font-family: 'Pinyon Script', cursive;
   color: var(--bordeaux);
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
   line-height: 1;
+  white-space: nowrap;
 }
 .actions {
   display: flex;

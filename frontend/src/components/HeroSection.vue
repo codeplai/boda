@@ -12,7 +12,7 @@
         </div>
         <p class="eyebrow">{{ $t('hero_date') }}</p>
         <p class="lede">{{ $t('hero_lede') }}</p>
-        <a class="btn" href="#rsvp">{{ $t('hero_btn') }}</a>
+        <a class="btn" href="#regalos">{{ $t('hero_btn') }}</a>
       </div>
       
       <div class="scroll-hint">

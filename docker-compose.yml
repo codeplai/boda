@@ -8,9 +8,10 @@ services:
     restart: unless-stopped
     networks:
       - edge
-    # Publicar 8080 es opcional (solo para probar local). Traefik enruta por la red interna.
-    ports:
-      - "8080:80"
+    # Traefik enruta por la red interna (boda.isoftesan.dev), no hace falta publicar puerto.
+    # Para probar local sin Traefik, descomenta y usa un puerto libre (ej. 8082:80).
+    # ports:
+    #   - "8082:80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.boda.rule=Host(`boda.isoftesan.dev`)"
